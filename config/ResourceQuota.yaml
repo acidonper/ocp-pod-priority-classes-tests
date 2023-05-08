@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: core-object-counts
+spec:
+  hard:
+    limits.cpu: 150m
+    limits.memory: 150Mi
+    requests.cpu: 75m
+    requests.memory: 75Mi

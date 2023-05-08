@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: low-35sec
+spec:
+  containers:
+    - name: low-35sec
+      image: registry.access.redhat.com/ubi8/ubi:latest
+      command: ['sh', '-c', 'echo The app is running! && sleep 35']
+      resources:
+        requests:
+          memory: "45Gi"
+          cpu: "50m"
+  restartPolicy: Never
+  priorityClassName: low-priority
+ 

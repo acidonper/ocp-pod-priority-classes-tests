@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: med-20sec
+spec:
+  template:
+    spec:
+      containers:
+        - name: med-20sec
+          image: registry.access.redhat.com/ubi8/ubi:latest
+          command: ['sh', '-c', 'echo The app is running! && sleep 20']
+          resources:
+            requests:
+              memory: "45Gi"
+              cpu: "50m"
+      restartPolicy: Never
+      priorityClassName: medium-priority
+  backoffLimit: 4
+
+
+  
